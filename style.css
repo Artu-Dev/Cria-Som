@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'Josefin';
+  src: url(fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.edit-data {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.edit-data form span { 
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.edit-data input {
+  padding: .8rem;
+  border: 1px solid #292929;
+  font-size: 1.2rem;
+}
+
+.project-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-add input {
+  margin-bottom: 1rem;
+}
+.edit-data form input:focus {
+  outline: 2px solid #156515;
+}
+
+.project-add button, #download {
+  padding: 1rem;
+  border: none;
+  background: #B73E3E;
+  color: #EDDBC0;
+  border-radius: 4rem;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: ease .3s;
+  cursor: pointer;
+}
+
+.project-add button:hover {
+  background: #7c2b2b;
+}
+
+#download {
+  background: #156515;
+  text-decoration: none;
+}
+#download:hover {
+  background: #0b350b;
+}
+
+.criasom-dados {
+  display: flex;
+  height: 8rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.logo {
+  height: 100%;
+  width: 16rem;
+}
+
+.logo img {
+  width: 250px;
+  height: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: contain;
+  position: absolute;
+}
+
+.cnpj {
+  position: absolute;
+  font-size: .9rem;
+  left: 0rem;
+  top: .5rem;
+}
+
+address {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  text-align: end;
+}
+
+address .tel {
+  font-weight: bold;
+}
+
+address .address {
+  font-size: .8rem;
+}
+
+.cleinte-dados h2 {
+  font-size: 1.1rem;
+}
+
+.client-name {
+  color: #292929;
+}
+
+.top-container {
+  background: #fffcf8;
+  height: 70vh;
+  padding: 1rem 4rem;
+}
+
+.top-container table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.table-quant {
+  width: 10%;
+}
+
+.table-desc {
+  width: 70%;
+}
+
+.table-total {
+  width: 20%;
+}
+
+.table-single-total {
+  color: #156515;
+  color: #B73E3E;
+}
+
+.top-container thead th {
+  border-bottom: 1px solid #777777;
+  text-transform: uppercase;
+  font-size: .8rem;
+  text-align: start;
+  padding-bottom: .4rem;
+  font-weight: bold;
+}
+
+.top-container tbody :is(th, td) {
+  padding-top: 1.5rem;
+  font-weight: 600;
+}
+
+.top-container tbody th {
+  text-align: start;
+}
+
+.avisos-container ul {
+  padding-top: 1rem;
+  list-style: none;
+}
+
+.avisos-container ul li {
+  position: relative;
+  padding-left: 1rem;
+  font-weight: bold;
+  font-size: .9rem;
+}
+.avisos-container ul li::before {
+  content: '*';
+  font-size: 1.8rem;
+  color: rgb(183, 62, 62);
+  left: 0;
+  position: absolute;
+}
+
+.bottom-container {
+  background: #EDDBC0;
+  height: 30vh;
+  position: relative;
+}
+
+.bottom-dados {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  font-size: 1.8rem;
+}
+
+.bottom-total span{
+  color: #B73E3E;
+}
+
+.bottom-footer {
+  padding: 1rem 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+
+.thanks {
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: .5rem;
+}
+
+.thanks img {
+  height: 1.3rem;
+  position: relative;
+  top: -.2rem;
+}

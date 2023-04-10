@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cria Som</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="dom-to-image.min.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <section class="edit-data">
+    <form id="form">
+      <span>
+        <label for="txtName">Nome do Cliente*</label>
+        <input id="txtName" type="text" placeholder="Nome-Cliente" name="" required>
+      </span>
+      <span>
+        <label for="txtCnpj">CPF Cliente</label>
+        <input id="txtCnpj" type="text" placeholder="Cpf-cliente" name="">
+      </span>
+      <span>
+        <label for="input-Data">Data</label>
+        <input id="input-Data" type="date" name="">
+      </span>
+  
+      <div class="project-add">
+        <label for="input-productName">Produto Nome*</label>
+        <input id="input-productName" type="text" placeholder="Nome-Produto" name="">
+        <label for="input-quantidade">Quantidade*</label>
+        <input id="input-quantidade" type="number" min="1" max="999" placeholder="01" name="">
+        <label for="input-price">Preço*</label>
+        <input id="input-price" type="number" min="1" step=".1" placeholder="R$ 123.45" name="">
+        <button  type="submit">Atualizar Dados</button>
+      </div>
+    </form>
+    <a  href="#" id="download">Finalizar</a>
+  </section>
+  <main id="main">
+    <section class="top-container">
+      <div class="dados-container">
+        <div class="criasom-dados">
+          <span class="logo"><img src="Screenshot_17.png" alt=""></span>
+          <span class="cnpj">CNPJ: 28.712.233/0001-36</span>
+          <address>
+            <p class="email">email@gmail.com</p>
+            <span>
+              <p class="tel">(27) 99861-3278</p>
+              <p class="tel">(27) 99635-5460</p>
+              <p class="tel">(27) 98874-8910</p>
+            </span>
+            <p class="address">Rua Cedro Nº21 - josé de anchieta - serra/es</p>
+          </address>
+        </div>
+        <div class="cleinte-dados">
+          <h2>Cliente: <span class="client-name">Nome Cliente</span></h2> 
+          <h2>CNPJ: <span class="client-cnpj">--- local de aplicação ---</span></h2> 
+        </div>
+      </div>
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="table-quant">Qtd</th>
+              <th class="table-desc">Descrição</th>
+              <th class="table-total">Total</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+          </tbody>
+        </table>
+      </div>
+      <div class="avisos-container">
+        <ul>
+          <li class="aviso">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem iusto rerum
+          </li>
+          <li class="aviso">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem iusto rerum
+          </li>
+          <li class="aviso">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem iusto rerum
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="bottom-container">
+      <div class="bottom-dados">
+        <span class="bottom-data">
+            <p id="data">09/04/2023</p>
+        </span>
+        <span class="bottom-total">
+          Total: <span id="total">R$1234,56</span>
+        </span>
+      </div>
+      <div class="bottom-footer">
+        <span class="thanks">
+          <img class="heart-icon" src="heart-solid.svg" alt=""> Obrigado Pela Preferência 
+        </span>
+      </div>
+    </section>
+  </main>
+</body> 
+</html>
