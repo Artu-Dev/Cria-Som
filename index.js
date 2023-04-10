@@ -40,7 +40,6 @@ form.addEventListener('submit', (e) => {
 
 downloadLink.addEventListener('click', () => {
   getIMG();
-  downloadLink.click();
 });
 
 function getIMG() {
