@@ -17,6 +17,7 @@ const downloadLink = document.querySelector('#download');
 
 
 let PriceTotal = [];
+const items = [];
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -25,10 +26,16 @@ form.addEventListener('submit', (e) => {
     return
   }
   const name = inputProductName.value;
-  let quantidade = inputQuant.value || '1';
-  let price = 0;
-  price = Number(inputPrice.value) * Number(quantidade);
+  const quantidade = inputQuant.value || '1';
+  const price = Number(inputPrice.value) * Number(quantidade);;
   PriceTotal.push(Number(price));
+  
+  items.push({
+    quant: quantidade,
+    desc: name,
+    price: price
+  });
+
 
   changeDOM();
   addItemTable(quantidade, name, price);
@@ -68,23 +75,33 @@ function formatPrice(number) {
   });
 }
 
-function addItemTable(quant, desc, price) {
-  const tr = document.createElement('tr');
-  const tdQuant = document.createElement('td');
-  const tdName = document.createElement('td');
-  const tdPrice = document.createElement('td');
+function addItemTable() {
+  tableBody.innerHTML = '';
+  items.map((item, index) => {
+    const tr = document.createElement('tr');
+    const tdQuant = document.createElement('td');
+    const tdName = document.createElement('td');
+    const tdPrice = document.createElement('td');
+    
+    tdPrice.classList.add('table-single-total');
   
-  tdPrice.classList.add('table-single-total');
+    tdQuant.textContent = item.quant;
+    tdName.textContent = item.desc;
+    tdPrice.textContent = formatPrice(item.price);
+  
+    tr.appendChild(tdQuant);
+    tr.appendChild(tdName);
+    tr.appendChild(tdPrice);
 
-  tdQuant.textContent = quant;
-  tdName.textContent = desc;
-  tdPrice.textContent = formatPrice(price);
-
-  tr.appendChild(tdQuant)
-  tr.appendChild(tdName)
-  tr.appendChild(tdPrice)
-
-  tableBody.appendChild(tr);
+    tr.addEventListener('dblclick', () => {
+      const confirmDelete = confirm('Deseja excluir item?');
+      if(!confirmDelete) return;
+      items.splice(index, 1);
+      addItemTable();
+    });
+  
+    tableBody.appendChild(tr);
+  });
 }
 
 function changeDOM() {

@@ -15,8 +15,14 @@ html {
 }
 
 body {
-  max-width: 550px;
   margin: 0 auto;
+  max-width: 550px;
+  background: #dbdbdb;
+}
+
+main {
+  min-width: 550px;
+  height: 900px;
 }
 
 .edit-data {
@@ -129,7 +135,7 @@ address .address {
 
 .top-container {
   background: #fffcf8;
-  height: 70vh;
+  height: 70%;
   padding: 1rem 4rem;
 }
 
@@ -195,7 +201,7 @@ address .address {
 
 .bottom-container {
   background: #EDDBC0;
-  height: 30vh;
+  height: 30%;
   position: relative;
 }
 
