@@ -16,7 +16,6 @@ const form = document.querySelector('#form');
 const downloadLink = document.querySelector('#download');
 
 
-let PriceTotal = [];
 const items = [];
 
 form.addEventListener('submit', (e) => {
@@ -28,7 +27,6 @@ form.addEventListener('submit', (e) => {
   const name = inputProductName.value;
   const quantidade = inputQuant.value || '1';
   const price = Number(inputPrice.value) * Number(quantidade);;
-  PriceTotal.push(Number(price));
   
   items.push({
     quant: quantidade,
@@ -36,8 +34,6 @@ form.addEventListener('submit', (e) => {
     price: price
   });
 
-
-  changeDOM();
   addItemTable(quantidade, name, price);
   alert('Atualizado com sucesso');
 
@@ -98,14 +94,18 @@ function addItemTable() {
       if(!confirmDelete) return;
       items.splice(index, 1);
       addItemTable();
+      changeDOM();
     });
-  
+    
     tableBody.appendChild(tr);
+    changeDOM();
   });
 }
 
 function changeDOM() {
-  const totalSoma = formatPrice(PriceTotal.reduce((acc, currValue) => acc + currValue, 0));
+  const prices = items.map(item => item.price)
+  const totalSoma = formatPrice(prices.reduce((acc, currValue) => acc + currValue, 0));
+  console.log(totalSoma);
   
 
   ClientName.textContent = inputName.value;
