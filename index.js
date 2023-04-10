@@ -38,14 +38,16 @@ form.addEventListener('submit', (e) => {
   
 })
 
-downloadLink.addEventListener('click', getIMG);
+downloadLink.addEventListener('click', () => {
+  getIMG();
+  downloadLink.click();
+});
 
 function getIMG() {
   domtoimage.toPng(mainContainer)
     .then(function(dataUrl) {
       downloadLink.download = 'criasom.png';
       downloadLink.href = dataUrl;
-      downloadLink.click();
     })
     .catch(function (err){
       console.error(err);

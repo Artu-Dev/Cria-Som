@@ -235,3 +235,18 @@ address .address {
   position: relative;
   top: -.2rem;
 }
+
+
+@media screen and (max-width: 550px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .edit-data {
+    padding: 2rem;
+  }
+  main {
+    width: 500px;
+    position: relative;
+  }
+}
