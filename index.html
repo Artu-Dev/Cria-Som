@@ -10,11 +10,12 @@
   <script src="index.js" defer></script>
 </head>
 <body>
+  <div class="alert"></div>
   <section class="edit-data">
     <form id="form">
       <span>
-        <label for="txtName">Nome do Cliente*</label>
-        <input id="txtName" type="text" placeholder="Nome-Cliente" name="" required>
+        <label for="txtName">Nome do Cliente<span>*</span></label>
+        <input id="txtName" type="text" placeholder="Nome-Cliente" name="">
       </span>
       <span>
         <label for="txtCnpj">CPF Cliente</label>
@@ -26,12 +27,12 @@
       </span>
   
       <div class="project-add">
-        <label for="input-productName">Produto Nome*</label>
+        <label for="input-productName">Produto Nome<span>*</span></label>
         <input id="input-productName" type="text" placeholder="Nome-Produto" name="">
-        <label for="input-quantidade">Quantidade*</label>
+        <label for="input-quantidade">Quantidade</label>
         <input id="input-quantidade" type="number" min="1" max="999" placeholder="01" name="">
-        <label for="input-price">Preço*</label>
-        <input id="input-price" type="number" min="1" step=".1" placeholder="R$ 123.45" name="">
+        <label for="input-price">Preço<span>*</span></label>
+        <input id="input-price" type="text" maxlength="10" placeholder="R$ 123.45" name="">
         <button  type="submit">Atualizar Dados</button>
       </div>
     </form>
@@ -88,7 +89,7 @@
     <section class="bottom-container">
       <div class="bottom-dados">
         <span class="bottom-data">
-            <p id="data">09/04/2023</p>
+            <p id="data">--/--/----</p>
         </span>
         <span class="bottom-total">
           Total: <span id="total">R$1234,56</span>
