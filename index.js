@@ -62,7 +62,7 @@ function alertMessage(message, type){
   alertDiv.classList.add(type);
   
   setTimeout(() => {
-    alertDiv.style.top = '-3rem';
+    alertDiv.style.top = '-4rem';
     alertDiv.classList.remove(type);
   }, 2000);
 }
